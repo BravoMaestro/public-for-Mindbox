@@ -8,9 +8,10 @@ namespace ConsoleApp1
 {
     class Program
     {
-        static void soart (double a, double b)
+        static void soart (double a, double b, double c)
         {
-            double S = (a * b) / 2;
+            double S = (a + b +c) / 2;
+            S = Math.Sqrt(S * (S - a) * (S - b) * (S - c));
             Console.Write(S);
         }
         static void aoacar(double R)
@@ -21,7 +22,7 @@ namespace ConsoleApp1
         }
         static void Main()
         {
-           double a, b, R;
+           double a, b, R, c;
            int x;
                 Console.WriteLine("for find square of a right triangle - write 1");
                 Console.WriteLine("for find area of ​​a circle along its radius - write 2");
@@ -29,12 +30,15 @@ namespace ConsoleApp1
 
             if (x == 1)
             {
-                Console.WriteLine("Write a, b");
+                Console.WriteLine("Write a, b, c");
+                Console.Write("Write a =  ");
                 a = double.Parse(Console.ReadLine());
+                Console.Write("Write b =  ");
                 b = double.Parse(Console.ReadLine());
-
+                Console.Write("Write c =  ");
+                c = double.Parse(Console.ReadLine());
                 Console.Write("square of a right triangle equals = "); 
-                soart (a, b);
+                soart (a, b,c);
                 Console.WriteLine();
                 Console.WriteLine("Click any kay for exit");
                 Console.ReadLine();
@@ -42,6 +46,7 @@ namespace ConsoleApp1
                 if (x == 2)
                 {
                     Console.WriteLine("Wrire R");
+                    Console.WriteLine("Write a =  ");
                     R = double.Parse(Console.ReadLine());
                     Console.Write("area of circle along equals = ");
                     aoacar(R);
