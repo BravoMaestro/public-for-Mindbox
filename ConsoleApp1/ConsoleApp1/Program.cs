@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -24,6 +20,7 @@ namespace ConsoleApp1
         {
            double a, b, R, c;
            int x;
+            char T;
                 Console.WriteLine("for find square of a right triangle - write 1");
                 Console.WriteLine("for find area of ​​a circle along its radius - write 2");
                 x = int.Parse(Console.ReadLine()); 
@@ -40,8 +37,16 @@ namespace ConsoleApp1
                 Console.Write("square of a right triangle equals = "); 
                 soart (a, b,c);
                 Console.WriteLine();
-                Console.WriteLine("Click any kay for exit");
-                Console.ReadLine();
+                Console.WriteLine("Click any kay for exit or click 'R' for repeat");
+                T = char.Parse(Console.ReadLine());
+                if ((T == 'R') || (T == 'r'))
+                {
+                    Main();
+                }
+                if (T != 'R')
+                {
+                    Environment.Exit(0);
+                }
             }
                 if (x == 2)
                 {
@@ -51,8 +56,16 @@ namespace ConsoleApp1
                     Console.Write("area of circle along equals = ");
                     aoacar(R);
                     Console.WriteLine();
-                    Console.WriteLine("Click any kay for exit");
-                    Console.ReadLine();
+                    Console.WriteLine("Click any kay for exit or click 'R' for repeat");
+                    T = char.Parse(Console.ReadLine());
+                    if ((T == 'R')||(T=='r'))
+                    {
+                    Main();
+                    }
+                    if (T != 'R') 
+                    {
+                    Environment.Exit(0);
+                    }
                 }
 
                 if (x != 1 & x != 2)
